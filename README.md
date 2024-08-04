@@ -84,8 +84,10 @@ FUNCTION playGame
 
     IF playerScore > computerScore THEN
         RETURN "Player Wins!"
-    ELSE
+    IF playerScore < computerScore THEN
         RETURN "Computer Wins!"
+    IF playerScore = computerScore THEN
+        RETURN "It's a Tie!"
 ```
 
 The main function on the program mainly only calls the playGame function, hence all operations and processes are held by the functions.
