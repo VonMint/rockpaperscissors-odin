@@ -1,10 +1,8 @@
 function getComputerChoice(){
     let randomNumber = getRandomNumber(99)
-    if (randomNumber < 34){
-        return "ROCK";
-    }else if (randomNumber < 67 && randomNumber > 33){
-        return "PAPER";
-    }else return "SCISSORS";
+    if (randomNumber < 34) return "ROCK";
+    else if (randomNumber < 67 && randomNumber > 33) return "PAPER";
+    else return "SCISSORS";
     
 }
 
@@ -32,8 +30,9 @@ function trimAndCapitalizeText(string){
 }
 
 function playRound(){
-    let playerChoice = getPlayerChoice();
-    let computerChoice = getComputerChoice();
+    const playerChoice = getPlayerChoice();
+    const computerChoice = getComputerChoice();
+    alert(`The Computer Picked ${computerChoice}!`)
     if (playerChoice === computerChoice) return "TIE";
     switch(playerChoice){
         case "SCISSORS":
@@ -60,14 +59,15 @@ function playGame(){
         let winner = playRound();
         if(winner === "PLAYER") ++playerScore;
         if(winner === "COMPUTER") ++computerScore;
+        alert(`The score is now Player: ${playerScore} vs Computer: ${computerScore}`);
         ++round;
     }
 
     if (playerScore > computerScore)
-        return "Player Wins!";
+        return alert("Player Wins!");
     if (playerScore < computerScore)
-        return "Computer Wins!";
+        return alert("Computer Wins!");
     
     //Return case of a tie
-    return "It's a Tie!"
+    return alert("It's a Tie!");
 }
